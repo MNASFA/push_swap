@@ -12,17 +12,43 @@
 
 #include "../push_swap.h"
 
+#include "../push_swap.h"
+
 // Swap the first two elements of a stack
-void sa(t_stack *a)
+void	sa(t_stack *a)
 {
-	t_node	*first;
-	t_node	*second;
+	int tmp;
 	
 	if (a->size < 2)
 		return;
-	first = a->top;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	a->top = second;
+	tmp = a->top->content;
+	a->top->content = a->top->next->content;
+	a->top->next->content = tmp;
+}
+
+void	sb(t_stack *b)
+{
+	sa(b);
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	sa(a);
+	sb(b);
+}
+
+//Push Operations
+void	pa(t_stack *a, t_stack *b)
+{
+	int	content;
+	
+	if (b->size == 0)
+		return ;
+	content = stack_pop(b);
+	stack_push (a, content);
+}
+
+void	pb(t_stack *b, t_stack *a)
+{
+	pa(b, a);
 }
