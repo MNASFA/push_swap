@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: hmnasfa <hmnasfa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 16:02:16 by hmnasfa           #+#    #+#             */
-/*   Updated: 2025/01/20 21:50:00 by marvin           ###   ########.fr       */
+/*   Updated: 2025/01/21 13:37:05 by hmnasfa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include <limits.h>
 
 //node structure 
 typedef struct s_node
@@ -65,14 +66,15 @@ int		parse_args(t_stack *a, int argc, char **argv);
 int		is_sorted(t_stack *a);
 void	sort_three_elements(t_stack *a);
 void	sort_two_elements(t_stack *a);
-void	push_to_stack_b(t_stack *a, t_stack *b, int pivot);
-void	sort_stack_b(t_stack *b);
-void	push_to_stack_a(t_stack *a, t_stack *b);
 // void	sort_medium_stack(t_stack *a, t_stack *b);
 void	assign_indexes(t_stack *a);
 void sort_five_elements(t_stack *a, t_stack *b);
 void	sort_four_elements(t_stack *a, t_stack *b);
 void print_stack(t_stack *stack);
+int find_largest(t_stack *a);
+int find_smallest(t_stack *a);
+void	push_to_stack_b(t_stack *a, t_stack *b, int i);
+void	push_to_stack_a(t_stack *a, t_stack *b);
 
 
 

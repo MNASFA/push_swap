@@ -1,0 +1,102 @@
+// static int has_comb(t_stack *a, int stack_size)
+// {
+// 	t_node *current;
+// 	int diff;
+// 	int counter;
+	
+// 	if (!a || !a->top)
+// 		return (0);
+// 	current = a->top;
+// 	counter = 0;
+// 	while (current && current->next)
+// 	{
+// 		diff = current->index - current->next->index;
+// 		if (diff == 2 || diff == 3 || diff == 4)
+// 			counter++;
+// 		current = current->next;
+// 	}
+// 	if (counter * 10 >= stack_size * 6)
+// 		return (1);
+// 	return (0);
+// }
+
+// static int chunk_size(int stack_size)
+// {
+// 	if (stack_size > 100)
+// 		return (34);
+// 	return (16);
+// }
+
+// void push_to_b(t_stack *a, t_stack *b)
+// {
+// 	t_node *current;
+// 	int comb;
+// 	int size;
+// 	int i;
+
+// 	if (!a || !a->top)
+// 		return ;
+		
+// 	i = 0;
+// 	comb = has_comb(a, a->size);
+// 	size = chunk_size(a->size);
+	
+// 	while (a->size)
+// 	{
+// 		current = a->top;
+// 		if (current->index <= i)
+// 		{
+// 			pb(b, a);
+// 			i++;
+// 		}
+// 		else if (current->index <= i + size)
+// 		{
+// 			pb(b, a);
+// 			rb(b);
+// 			i++;
+// 		}
+// 		else if (comb)
+// 			rra(a);
+// 		else
+// 			ra(a);
+// 	}
+// }
+
+// // void	push_to_a(t_stack *a, t_stack *b)
+// // {
+// // 	int pos;
+// // 	int size;
+// // 	int largest;
+// // 	t_node *current;
+
+// // 	if (!b || !b->top)
+// // 		return ;
+// // 	size = b->size;
+// // 	pos = 0;
+// // 	while (size)
+// // 	{
+// // 		largest = find_largest(b);
+// // 		pos = 0;
+// // 		current = b->top;
+		
+// // 		while (current)
+// // 		{
+// // 			if (current->content == largest)
+// // 				break ;
+// // 			pos++;
+// // 			current = current->next;
+// // 		}
+// // 		if (pos <= size / 2)
+// // 		{
+// // 			while (pos--)
+// // 				rb(b);
+// // 		}
+// // 		else
+// // 		{
+// // 			while (pos++ != size)
+// // 				rrb(b);
+// // 		}
+// // 		pa(a, b);
+// // 		size--;
+// // 	}
+// // }
